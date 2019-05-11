@@ -17,7 +17,6 @@ import authReducer from "./store/reducers/auth"
 
 import {watchAuth, watchBurgerBuilder, watchOrders} from "./store/sagas/index"
 
-require('dotenv').config()
 
 console.log(process.env.REACT_APP_FB_BASE_URL)
 
