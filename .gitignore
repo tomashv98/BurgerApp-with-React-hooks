@@ -23,9 +23,11 @@ yarn-error.log*
 test.env
 
 # src files
-src/*
-public/*
+src
+public
 build/static/css/*.map
 build/static/js/*.map
 
+.env
 
+webpack.config.js

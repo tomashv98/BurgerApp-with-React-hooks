@@ -9,9 +9,7 @@ export function* initIngredientsSaga(action) {
       process.env.REACT_APP_FB_BASE_URL + "/ingredients.json",
     );
     yield put(actions.setIns(res.data));
-    console.log(process.env.REACT_APP_FB_BASE_URL)
   } catch (err) {
-    console.log(process.env.REACT_APP_FB_BASE_URL)
 
     yield put(actions.fetchFailed());
   }
