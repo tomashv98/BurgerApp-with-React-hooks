@@ -8,7 +8,6 @@
 /coverage
 
 # production
-/build
 
 # misc
 .DS_Store
@@ -22,4 +21,11 @@ yarn-debug.log*
 yarn-error.log*
 
 test.env
+
+# src files
+src/*
+public/*
+build/static/css/*.map
+build/static/js/*.map
+
 
