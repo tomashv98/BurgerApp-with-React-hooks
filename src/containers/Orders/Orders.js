@@ -33,18 +33,18 @@ __proto__: Array(0)
 
 */
 
-  const makeFirstOrder = () => {
-    props.history.push('/');
-  };
+  // const makeFirstOrder = () => {
+  //   props.history.push('/');
+  // };
 
   let orders = <Spinner />;
   if (!props.loading) {
     orders = (
       <div>
         <p>Order History Empty</p>
-        <Button btnType='Success' clicked={makeFirstOrder}>
+        {/* <Button btnType='Success' clicked={makeFirstOrder}>
           Make Your First Order!
-        </Button>
+        </Button> */}
       </div>
     );
     if (props.orders.length !== 0) {

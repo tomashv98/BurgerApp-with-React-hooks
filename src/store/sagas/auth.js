@@ -17,15 +17,16 @@ export function* authSaga(action) {
     password: action.password,
     returnSecureToken: true,
   };
-  let url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.API_KEY}`;
+  let url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${process.env.REACT_APP_API_KEY}`;
   if (!action.isSignedUp) {
-    url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${process.env.API_KEY}`;
+    url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${process.env.REACT_APP_API_KEY}`;
   }
   try {
     const response = yield axios.post(url, authData);
     const expirationDate = yield new Date(
       new Date().getTime() + response.data.expiresIn * 1000,
     );
+    console.log(url)
     yield localStorage.setItem('token', response.data.idToken);
     yield localStorage.setItem('expirationDate', expirationDate);
     yield localStorage.setItem('localId', response.data.localId);
@@ -34,6 +35,8 @@ export function* authSaga(action) {
     );
     yield put(actions.checkAuthTimeout(response.data.expiresIn));
   } catch (err) {
+    console.log(url)
+
     yield put(actions.authFail(err.response.data.error));
   }
 }
