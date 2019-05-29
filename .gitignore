@@ -28,6 +28,5 @@ public/*
 build/static/css/*.map
 build/static/js/*.map
 
-.env
-
 webpack.config.js
+config.env

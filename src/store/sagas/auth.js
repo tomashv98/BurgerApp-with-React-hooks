@@ -26,7 +26,6 @@ export function* authSaga(action) {
     const expirationDate = yield new Date(
       new Date().getTime() + response.data.expiresIn * 1000,
     );
-    console.log(url)
     yield localStorage.setItem('token', response.data.idToken);
     yield localStorage.setItem('expirationDate', expirationDate);
     yield localStorage.setItem('localId', response.data.localId);
@@ -35,7 +34,6 @@ export function* authSaga(action) {
     );
     yield put(actions.checkAuthTimeout(response.data.expiresIn));
   } catch (err) {
-    console.log(url)
 
     yield put(actions.authFail(err.response.data.error));
   }

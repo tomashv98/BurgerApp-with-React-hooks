@@ -5,7 +5,6 @@ import axios from '../../axios-order';
 import Order from '../../components/Order/Order';
 import withErrorHandler from '../../hoc/withErrorHandler';
 import * as actions from '../../store/action/index';
-import Button from '../../components/UI/Button/Button';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 const Orders = props => {
